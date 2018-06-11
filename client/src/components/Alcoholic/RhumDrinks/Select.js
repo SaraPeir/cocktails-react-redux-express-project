@@ -55,4 +55,6 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { changeRhumSelectText })(SelectRhum)
+export default connect(mapStateToProps, { changeRhumSelectText })(SelectRhum);
+
+//This Select file is different to the others. In this case, this.props.arrayList, corresponding to state.dataRhum.drinksDataRhum esta vaćío al tempo t = 0 and in this time the page renders. If I used setInterval, the page has already rendered, so the options will not be drawn into the page, even if the console.log was visible. For this reason, I had to use a state into the constructor that will be updated at time t > 0, then used into createOptions function. As the state changes, the page will be re-rendered. At the first rendering no options are avalaible yet and the else condition is valid, as this.state.arrayRhumDrinks is void. Then, the array will be update ans the second render is carried out
