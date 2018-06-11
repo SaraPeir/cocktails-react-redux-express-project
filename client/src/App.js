@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { updateInfoNoAlc } from './actions';
 import { updateInfoGin } from './actions';
 import { updateInfoVodka } from './actions';
+import { updateInfoRhum } from './actions';
 import { changeSelectText } from './actions';
 import DrinkCard from './components/Analcolic/DrinkCard';
 import Select from './components/Analcolic/Select';
@@ -17,7 +18,8 @@ class App extends Component {
   componentWillMount() {
     this.props.updateInfoNoAlc(),
     this.props.updateInfoGin(),
-    this.props.updateInfoVodka()
+    this.props.updateInfoVodka(),
+    this.props.updateInfoRhum()
   }
 
   renderize(){
@@ -30,6 +32,10 @@ class App extends Component {
 
   renderizeVodka(){
     setTimeout(this.renderUsersListVodka.bind(this), 4000);  //In order to resolve the problem that arrayList3 was seen in its initial state (a void array, length = 0)
+  }
+
+  renderizeRhum(){
+    setTimeout(this.renderUsersListRhum.bind(this), 4000);  //In order to resolve the problem that arrayList3 was seen in its initial state (a void array, length = 0)
   }
 
   renderUsersList() {
@@ -47,12 +53,18 @@ class App extends Component {
       return console.log('this.props.arrayListVodka3', this.props.arrayListVodka3[0].map((x, index) => x.drinks).map((y, index) => y[0]).map((z, index) => z.strDrink));
     } else {return console.log('this.props.arrayListVodka3 no definido')}}
 
+    renderUsersListRhum() {
+      if(this.props.arrayListRhum !== undefined){
+        return console.log('this.props.arrayListRhum', this.props.arrayListRhum[0].data.map((x, index) =>  x.name));
+      } else {return console.log('this.props.arrayListRhum no definido')}}
+
     render() {
       return (
         <div className="App">
           {this.renderize()}
           {this.renderizeGin()}
           {this.renderizeVodka()}
+          {this.renderizeRhum()}
           <Menu />
           <Switch>
             <Route exact path='/' component={ Alcoholic } />
@@ -71,11 +83,13 @@ function mapStateToProps(state) {
     arrayListNoAlc2: state.dataNoAlc.drinksDataNoAlc2,
     arrayListNoAlc3: state.dataNoAlc.drinksDataNoAlc3,
     arrayListGin3: state.dataGin.drinksDataGin3,
-    arrayListVodka3: state.dataGin.drinksDataVodka3
+    arrayListVodka3: state.dataGin.drinksDataVodka3,
+    arrayListRhum: state.dataGin.drinksDataRhum
+
   }
 }
 
 
 // así podemos implementar React Redux con Router
 
-export default withRouter(connect(mapStateToProps, { updateInfoNoAlc, updateInfoGin, updateInfoVodka})(App));
+export default withRouter(connect(mapStateToProps, { updateInfoNoAlc, updateInfoGin, updateInfoVodka, updateInfoRhum})(App));

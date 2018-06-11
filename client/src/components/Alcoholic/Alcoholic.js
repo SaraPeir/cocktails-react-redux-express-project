@@ -8,6 +8,8 @@ import DrinkCardGin from './GinDrinks/DrinkCard';
 import SelectVodka from './VodkaDrinks/Select';
 import DrinkCardVodka from './VodkaDrinks/DrinkCard';
 
+import SelectRhum from './RhumDrinks/Select';
+
 
 class Alcoholic extends Component {
 
@@ -19,6 +21,7 @@ class Alcoholic extends Component {
       <DrinkCardGin />
       <SelectVodka />
       <DrinkCardVodka />
+<SelectRhum />
       </div>
     );
   }

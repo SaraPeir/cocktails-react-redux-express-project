@@ -4,9 +4,11 @@ import store from '../index.js';
 export const UPDATE_INFO = 'UPDATE_INFO';
 export const UPDATE_INFO_GIN = 'UPDATE_INFO_GIN';
 export const UPDATE_INFO_VODKA = 'UPDATE_INFO_VODKA';
+export const UPDATE_INFO_RHUM = 'UPDATE_INFO_RHUM';
 export const CHANGE_SELECT_TEXT = 'CHANGE_SELECT_TEXT';
 export const CHANGE_GIN_SELECT_TEXT = 'CHANGE_GIN_SELECT_TEXT';
 export const CHANGE_VODKA_SELECT_TEXT = 'CHANGE_VODKA_SELECT_TEXT';
+export const CHANGE_RHUM_SELECT_TEXT = 'CHANGE_RHUM_SELECT_TEXT';
 
 export function updateInfoNoAlc() {
     return (dispatch, getState) => {
@@ -59,6 +61,17 @@ export function updateInfoVodka() {
     }
   }
 
+  export function updateInfoRhum() {
+      return (dispatch, getState) => {
+          let array = [];
+          axios.get('api/rhum')
+              .then(response => array.push(response));
+              console.log('array rhum', array)
+            dispatch( { type: UPDATE_INFO_RHUM, drinksArrayRhum: array})
+        }
+      }
+
+
 export function changeSelectText(event) {
     return (dispatch, getState) => {
       const selectValue = event.target.value;
@@ -84,7 +97,7 @@ export function changeGinSelectText(event) {
 
 // const drinkArray = newArray[0].map((x, index) => x.drinks).map((y, index) => y[0]).filter((z, index) => z.strDrink == selectValue);
         const drinkArray = newArray[0].map((x, index) => x.drinks).map((y, index) => y[0]).filter((z, index) => z.strDrink == selectValue);
-        console.log('drinkArrayGin: ', drinkArray)
+      //  console.log('drinkArrayGin: ', drinkArray)
       dispatch( { type: CHANGE_GIN_SELECT_TEXT, textGin: selectValue, infoArrayGin: drinkArray} )
     }
 }
@@ -100,7 +113,24 @@ export function changeVodkaSelectText(event) {
 
 // const drinkArray = newArray[0].map((x, index) => x.drinks).map((y, index) => y[0]).filter((z, index) => z.strDrink == selectValue);
         const drinkArray = newArray[0].map((x, index) => x.drinks).map((y, index) => y[0]).filter((z, index) => z.strDrink == selectValue);
-        console.log('drinkArrayVodka: ', drinkArray)
+      //  console.log('drinkArrayVodka: ', drinkArray)
       dispatch( { type: CHANGE_VODKA_SELECT_TEXT, textVodka: selectValue, infoArrayVodka: drinkArray} )
+    }
+}
+
+
+export function changeRhumSelectText(event) {
+    return (dispatch, getState) => {
+      const selectValue = event.target.value;
+        function filterArray(){
+          return store.getState().dataRhum.drinksDataRhum;
+          };
+         store.subscribe(filterArray);
+         const newArray = filterArray();
+
+// const drinkArray = newArray[0].map((x, index) => x.drinks).map((y, index) => y[0]).filter((z, index) => z.strDrink == selectValue);
+        const drinkArray = newArray[0].data.map((x, index) => x.name);
+        console.log('drinkArrayRhum: ', drinkArray)
+      dispatch( { type: CHANGE_RHUM_SELECT_TEXT, textRhum: selectValue, infoArrayRhum: drinkArray} )
     }
 }

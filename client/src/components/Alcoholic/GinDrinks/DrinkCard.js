@@ -23,13 +23,13 @@ class DrinkCardGin extends Component {
 
 function mapStateToProps(state) {
 let object = state.selValGin.drinkInfoGinArray;
-console.log('selectValue', state.selValGin.selectGinValue)
-console.log('drinkInfoGinArray', state.selValGin.drinkInfoGinArray)
+// console.log('selectValue', state.selValGin.selectGinValue)
+// console.log('drinkInfoGinArray', state.selValGin.drinkInfoGinArray)
 
 const object2 = object[0];
 
 if(object !== undefined){
-console.log('ginObject', object)
+// console.log('ginObject', object)
 }
 
 function accessToDrinkName(){
@@ -68,7 +68,7 @@ function createIngredientsArray(){
     const ingredients3 = ingredients2.filter((w, index) =>  w !== '↵');
     const ingredients4 = ingredients3.filter((z, index) =>  z !== null);
 //↵
-  console.log('ingredients4', ingredients4);
+  // console.log('ingredients4', ingredients4);
     return ingredients4;
   }
 }
@@ -83,7 +83,7 @@ function createMeasuresArray(){
     const measures3 = measures2.filter((w, index) =>  w !== '↵');
     const measures4 = measures3.filter((z, index) =>  z !== null);
 
-  console.log('measures4', measures4);
+  // console.log('measures4', measures4);
     return  measures4;
   }
 }
@@ -97,13 +97,13 @@ let arrayMeasures = createMeasuresArray();
 function createCoupledArray(){
   if(arrayIngredients !== undefined && arrayMeasures !== undefined){
     let ingrMeasArray = arrayIngredients.concat(arrayMeasures);
-      console.log('ingrMeasArray', ingrMeasArray);
+      // console.log('ingrMeasArray', ingrMeasArray);
       let coupledArray = [];
       const length = ingrMeasArray.length;
       for(let i = 0; i < length/2; i++){
-        console.log('length', length)
+        // console.log('length', length)
         coupledArray.push(ingrMeasArray[i] + ' (' + ingrMeasArray[length/2 + i] + ')')
-        console.log('coupledArray', coupledArray);
+        // console.log('coupledArray', coupledArray);
       }
     return coupledArray.join(', ')
   }

@@ -23,12 +23,12 @@ class DrinkCardVodka extends Component {
 
 function mapStateToProps(state) {
   let object = state.selValVodka.drinkInfoVodkaArray;
-  console.log('selectValue', state.selValVodka.selectVodkaValue)
-  console.log('drinkInfoVodkaArray', state.selValVodka.drinkInfoVodkaArray)
+  // console.log('selectValue', state.selValVodka.selectVodkaValue)
+  // console.log('drinkInfoVodkaArray', state.selValVodka.drinkInfoVodkaArray)
 
   const object2 = object[0];
   if(object !== undefined){
-  console.log('vodkaObject', object)
+  // console.log('vodkaObject', object)
   }
 
   function accessToDrinkName(){
@@ -64,7 +64,7 @@ function mapStateToProps(state) {
     if(object2 !== undefined){
       ingredients = [object2.strIngredient1, object2.strIngredient2, object2.strIngredient3, object2.strIngredient4, object2.strIngredient5, object2.strIngredient6, object2.strIngredient7, object2.strIngredient8, object2.strIngredient9, object2.strIngredient10, object2.strIngredient11, object2.strIngredient12, object2.strIngredient13, object2.strIngredient14, object2.strIngredient15].filter((i, index) => i !== '' && i !== ' ')
 
-    console.log('ingredients', ingredients);
+    // console.log('ingredients', ingredients);
       return ingredients;
     }
   }
@@ -75,7 +75,7 @@ function mapStateToProps(state) {
     if(object2 !== undefined){
       measures = [object2.strMeasure1, object2.strMeasure2, object2.strMeasure3, object2.strMeasure4, object2.strMeasure5, object2.strMeasure6, object2.strMeasure7, object2.strMeasure8, object2.strMeasure9, object2.strMeasure10, object2.strMeasure11, object2.strMeasure12, object2.strMeasure13, object2.strMeasure14, object2.strMeasure15].filter((i, index) => i !== '' && i !== ' ')
 
-    console.log('measures', measures);
+    // console.log('measures', measures);
       return  measures;
     }
   }
@@ -87,13 +87,13 @@ function mapStateToProps(state) {
   function createCoupledArray(){
     if(arrayIngredients !== undefined && arrayMeasures !== undefined){
       let ingrMeasArray = arrayIngredients.concat(arrayMeasures);
-      console.log('ingrMeasArray', ingrMeasArray);
+      // console.log('ingrMeasArray', ingrMeasArray);
       let coupledArray = [];
       const length = ingrMeasArray.length;
       for(let i = 0; i < length/2; i++){
-        console.log('length', length)
+        // console.log('length', length)
         coupledArray.push(ingrMeasArray[i] + ' (' + ingrMeasArray[length/2 + i] + ')')
-        console.log('coupledArray', coupledArray);
+        // console.log('coupledArray', coupledArray);
       }
       return coupledArray.join(', ')
     }
