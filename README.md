@@ -1,12 +1,12 @@
-# Cocktails menu project
-
-> Create full stack apps with React/Redux and Express. Run your client and server with a single command
-
-### Version Without Redux
-This version includes Redux
-[Click Here For the Version WITHOUT Redux](https://github.com/bradtraversy/react_express_starter)
+# Cocktails recipes project
 
 ### React/Redux Express Starter Pack repository link: https://github.com/bradtraversy/react_redux_express_starter
+I used this version but I modified the Redux part
+
+### Version Without Redux
+The analogous version of the starter without Redux is here reported:
+(https://github.com/bradtraversy/react_express_starter)
+
 
 ### Images from: https://unsplash.com/search/photos/cocktails
 
@@ -36,14 +36,11 @@ npm run client
 
 
 ### Authors
-
 Brad Traversy & Gregory Assasie (React/Redux Express Starter Pack);
-Sara Peirce
+Sara Peirce (The cocktails app)
 
 ### Version
-
 1.0.0
 
 ### License
-
 This project is licensed under the MIT License
