@@ -127,9 +127,7 @@ export function changeRhumSelectText(event) {
           };
          store.subscribe(filterArray);
          const newArray = filterArray();
-
-// const drinkArray = newArray[0].map((x, index) => x.drinks).map((y, index) => y[0]).filter((z, index) => z.strDrink == selectValue);
-        const drinkArray = newArray[0].data.map((x, index) => x.name);
+        const drinkArray = newArray[0].data.filter((x, index) => x.name == selectValue);
         console.log('drinkArrayRhum: ', drinkArray)
       dispatch( { type: CHANGE_RHUM_SELECT_TEXT, textRhum: selectValue, infoArrayRhum: drinkArray} )
     }

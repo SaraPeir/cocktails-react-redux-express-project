@@ -28,7 +28,7 @@ function mapStateToProps(state) {
 
   const object2 = object[0];
   if(object !== undefined){
-  // console.log('vodkaObject', object)
+  console.log('ginObject', object)
   }
 
   function accessToDrinkName(){

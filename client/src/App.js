@@ -39,22 +39,22 @@ class App extends Component {
   }
 
   renderUsersList() {
-    if(this.props.arrayListNoAlc3 !== undefined){
+    if(this.props.arrayListNoAlc3 !== undefined && this.props.arrayListNoAlc3[0] !== undefined){
       return console.log(this.props.arrayListNoAlc3[0].map((x, index) => x.drinks).map((y, index) => y[0]).map((z, index) => z.strDrink));
     } else {return console.log('this.props.arrayListNoAlc3 no definido')}}
 
   renderUsersListGin() {
-    if(this.props.arrayListGin3 !== undefined){
+    if(this.props.arrayListGin3 !== undefined && this.props.arrayListGin3[0] !== undefined){
       return console.log('this.props.arrayListGin3', this.props.arrayListGin3[0].map((x, index) => x.drinks).map((y, index) => y[0]).map((z, index) => z.strDrink));
     } else {return console.log('this.props.arrayListGin3 no definido')}}
 
   renderUsersListVodka() {
-    if(this.props.arrayListVodka3 !== undefined){
+    if(this.props.arrayListVodka3 !== undefined && this.props.arrayListVodka3[0] !== undefined){
       return console.log('this.props.arrayListVodka3', this.props.arrayListVodka3[0].map((x, index) => x.drinks).map((y, index) => y[0]).map((z, index) => z.strDrink));
     } else {return console.log('this.props.arrayListVodka3 no definido')}}
 
     renderUsersListRhum() {
-      if(this.props.arrayListRhum !== undefined){
+      if(this.props.arrayListRhum !== undefined && this.props.arrayListRhum[0] !== undefined){
         return console.log('this.props.arrayListRhum', this.props.arrayListRhum[0].data.map((x, index) =>  x.name));
       } else {return console.log('this.props.arrayListRhum no definido')}}
 

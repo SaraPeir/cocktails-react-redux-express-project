@@ -42,7 +42,7 @@ createOptions(){
   render() {
     return (
       <div>
-        <select>{this.createOptions()}</select>
+        <select value = {this.props.selectedOption} onChange = {this.props.changeRhumSelectText}>{this.createOptions()}</select>
       </div>
     );
   }

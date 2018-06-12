@@ -9,6 +9,7 @@ import SelectVodka from './VodkaDrinks/Select';
 import DrinkCardVodka from './VodkaDrinks/DrinkCard';
 
 import SelectRhum from './RhumDrinks/Select';
+import DrinkCardRhum from './RhumDrinks/DrinkCard';
 
 
 class Alcoholic extends Component {
@@ -22,6 +23,7 @@ class Alcoholic extends Component {
       <SelectVodka />
       <DrinkCardVodka />
 <SelectRhum />
+<DrinkCardRhum />
       </div>
     );
   }
