@@ -35,14 +35,14 @@ createOptions(){
       let options = array[0].data.map((x, index) => <option key={index}> {x.name}</option>)
         return  options
       } else {
-        return  <option>Array todavía vacío</option>
+        return  <option> Rhum Drinks</option>
         }
     }
 
   render() {
     return (
       <div>
-        <select value = {this.props.selectedOption} onChange = {this.props.changeRhumSelectText}>{this.createOptions()}</select>
+        <select value = {this.props.selectedOption} onChange = {this.props.changeRhumSelectText}><option>Rhum Drinks</option>{this.createOptions()}</select>
       </div>
     );
   }
