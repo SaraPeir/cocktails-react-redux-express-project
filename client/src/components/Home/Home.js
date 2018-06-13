@@ -8,20 +8,16 @@ import {Image2} from '../../images/image2.jpeg';
 
 
 class Home extends Component {
-
-
-
-
   render() {
-
-
     return (
       <div className = "home-div">
         <div className = "image-div">
         </div>
         <div className = "text-div">
-        <Link to={`/alcoholic`} style={{ textDecoration: 'none', color: 'black', textAlign: 'center'}}><button>Alcoholic drinks</button></Link>
-        <Link to={`/analcolic`} style={{ textDecoration: 'none', color: 'black', textAlign: 'center'}}><button>No alcoholic drinks</button></Link>
+          <div className = "title">cocktails recipes</div>
+          <p className = "text">Sweet or sour, fresh or frozen, a cocktail is the mirror of the personal tastes, which in some cases are the reflexion of the soul. Find your favourite cocktail here! </p>
+          <Link to={`/alcoholic`} style={{ textDecoration: 'none', color: 'black', textAlign: 'center'}}><button>Alcoholic drinks</button></Link>
+          <Link to={`/analcolic`} style={{ textDecoration: 'none', color: 'black', textAlign: 'center'}}><button>No alcoholic drinks</button></Link>
       </div>
   </div>
     );
