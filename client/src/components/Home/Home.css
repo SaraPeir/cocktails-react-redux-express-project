@@ -42,7 +42,11 @@ button{
   font-size: 30px;
   margin: 2%;
   cursor: pointer;
+  transition: all 1s ease;
+}
 
+button:hover{
+  transform: scale(1.2);
 }
 
 /*font-family: 'Alfa Slab One', cursive;

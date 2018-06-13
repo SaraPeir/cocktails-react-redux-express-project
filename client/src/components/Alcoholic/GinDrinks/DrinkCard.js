@@ -3,6 +3,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux'
 import { changeGinSelectText } from '../../../actions';
 import store from '../../../index.js';
+import './DrinkCard.css';
 
 
 class DrinkCardGin extends Component {
@@ -11,12 +12,18 @@ class DrinkCardGin extends Component {
   render() {
     return (
       <div>
-        <h2>{this.props.selectedDrinkName}</h2>
-        <h2>{this.props.selectedDrinkType}</h2>
-        <img src={this.props.selectedDrinkSrc} alt={this.props.selectedDrinkName} width='200px'/>
-        <h2>{this.props.selectedDrinkIngrAndMeas}</h2>
-        <h2>{this.props.selectedDrinkGlassAndInstructions}</h2>
+        <div className ="cocktail-card-div">
+          <div className ="cocktail-image-div">
+          <img src={this.props.selectedDrinkSrc} alt={this.props.selectedDrinkName} width='100%'/>
+          </div>
+          <div className ="cocktail-text-div">
+            <h2>{this.props.selectedDrinkName}</h2>
+            <h2>{this.props.selectedDrinkType}</h2>
+            <h2>{this.props.selectedDrinkIngrAndMeas}</h2>
+            <h2>{this.props.selectedDrinkGlassAndInstructions}</h2>
+          </div>
       </div>
+  </div>
     );
   }
 }
