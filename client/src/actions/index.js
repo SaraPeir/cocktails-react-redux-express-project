@@ -82,6 +82,7 @@ export function changeSelectText(event) {
         const newArray = filterArray();
         const drinkArray = newArray[0].map((x, index) => x.drinks).map((y, index) => y[0]).filter((z, index) => z.strDrink == selectValue);
         //console.log('drinkArray: ', drinkArray)
+        //console.log('newArray: ', newArray);
         dispatch( { type: CHANGE_SELECT_TEXT, text: selectValue, infoArray: drinkArray} )
     }
 }

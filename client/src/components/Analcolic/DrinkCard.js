@@ -25,8 +25,10 @@ class DrinkCard extends Component {
 function mapStateToProps(state) {
   let object = state.selVal.drinkInfoArray;
   const object2 = object[0];
+
   function accessToDrinkName(){
     if(object2 !== undefined){  //If I did not see in this way, it said me that object3 was undefined
+      console.log('state.selVal.drinkInfoArray', object);
     return object2.strDrink;
     }
   }
@@ -62,7 +64,7 @@ function mapStateToProps(state) {
     }
   }
 
-  createIngredientsArray();
+  //createIngredientsArray(); solo para verlo en console
 
   function createMeasuresArray(){
     let measures = [];
@@ -72,9 +74,9 @@ function mapStateToProps(state) {
       return  measures;
     }
   }
-  createMeasuresArray();
+  //createMeasuresArray();  solo para verlo en console
 
-let arrayIngredients = createIngredientsArray();
+let arrayIngredients = createIngredientsArray();  //In this way, you create the let and execute the function (see in console!)
 let arrayMeasures = createMeasuresArray();
 
 function createCoupledArray(){

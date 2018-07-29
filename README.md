@@ -44,3 +44,15 @@ Sara Peirce (The cocktails app)
 
 ### License
 This project is licensed under the MIT License
+
+
+
+<!-- New after downloading into MAC
+ "debug": {
+          "version": "2.6.8",
+          "bundled": true,
+          "dev": true,  =====>>>>> NEW
+          "optional": true,
+          "requires": {
+            "ms": "2.0.0"
+          } -->
