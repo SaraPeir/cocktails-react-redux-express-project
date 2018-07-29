@@ -18,6 +18,7 @@ class Home extends Component {
           <p className = "text">Sweet or sour, fresh or frozen, a cocktail is the mirror of the personal tastes, which in some cases are the reflexion of the soul. Find your favourite cocktail here! </p>
           <Link to={`/alcoholic`} style={{ textDecoration: 'none', color: 'black', textAlign: 'center'}}><button>Alcoholic drinks</button></Link>
           <Link to={`/analcolic`} style={{ textDecoration: 'none', color: 'black', textAlign: 'center'}}><button>No alcoholic drinks</button></Link>
+          <Link to={`/recipes`} style={{ textDecoration: 'none', color: 'black', textAlign: 'center'}}><button>Your personal recipes</button></Link>
       </div>
   </div>
     );

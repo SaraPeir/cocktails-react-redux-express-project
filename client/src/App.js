@@ -10,6 +10,7 @@ import DrinkCard from './components/Analcolic/DrinkCard';
 import Select from './components/Analcolic/Select';
 import Analcolic from './components/Analcolic/Analcolic';
 import Alcoholic from './components/Alcoholic/Alcoholic';
+import RecipesPage from './components/Recipes/RecipesPage';
 import Home from './components/Home/Home';
 import { BrowserRouter, Link, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
@@ -71,6 +72,7 @@ class App extends Component {
             <Route exact path='/' component={ Home } />
             <Route path='/alcoholic' component={ Alcoholic } />
             <Route path='/analcolic' component={ Analcolic } />
+            <Route path='/recipes' component={ RecipesPage } />
           </Switch>
         </div>
       );
