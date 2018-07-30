@@ -50,7 +50,10 @@ class Form extends Component {
         }
         
         console.log('data', this.state.data);
+        
         this.resetName();
+        this.resetIngredients();
+        this.resetRecipe();
       }
 
       resetName(){
@@ -58,13 +61,25 @@ class Form extends Component {
             name: ''
           });
       }
+
+      resetIngredients(){
+        this.setState({
+            ingredients: ''
+          });
+      }
+
+      resetRecipe(){
+        this.setState({
+            recipe: ''
+          });
+      }
  
   render() {
     return (
       <div>
       <input type="text" placeholder="Name" onChange={this.writeName} value={this.state.name} />
-      <textarea rows="4" cols="50" placeholder="Ingredients" onChange={this.writeIngredients}></textarea>
-      <textarea rows="4" cols="50" placeholder="Recipe" onChange={this.writeRecipe}></textarea>
+      <textarea rows="4" cols="50" placeholder="Ingredients" onChange={this.writeIngredients} value={this.state.ingredients}></textarea>
+      <textarea rows="4" cols="50" placeholder="Recipe" onChange={this.writeRecipe} value={this.state.recipe}></textarea>
       <button onClick={this.updateData}>Ok</button>
       </div>
     );
